@@ -22,5 +22,3 @@ require "user.options"
 require "user.autocmd"
 require "user.lualine"
 require "user.noice"
--- require "user.nui"
-

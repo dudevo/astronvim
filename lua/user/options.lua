@@ -1,41 +1,274 @@
-vim.opt.relativenumber = false
-vim.lsp.inlay_hint.enable(true)
+-- require("lspconfig").ts_ls.setup {
+--   settings = {
+--     typescript = {
+--       format = {
+--         enable = true,
+--         insertSpaceAfterCommaDelimiter = true,
+--         insertSpaceAfterConstructor = false,
+--         insertSpaceAfterFunctionKeywordForAnonymousFunctions = true,
+--         insertSpaceAfterKeywordsInControlFlowStatements = true,
+--         insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = true,
+--         insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces = false,
+--         insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces = true,
+--         insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets = true,
+--         insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces = false,
+--         insertSpaceAfterSemicolonInForStatements = true,
+--         insertSpaceBeforeAndAfterBinaryOperators = true,
+--         insertSpaceBeforeFunctionParenthesis = false,
+--       },
+--       implicitProjectConfig = {
+--         checkJs = false,
+--         experimentalDecorators = false,
+--         module = "commonjs",
+--         strictFunctionTypes = false,
+--         strictNullChecks = true,
+--         strictPropertyInitialization = false,
+--         useDefineForClassFields = false,
+--       },
+--       preferences = {
+--         autoImportFileExcludePatterns = {},
+--         autoImportSpecifierExcludeRegexes = {},
+--         importModuleSpecifier = "relative",
+--         importModuleSpecifierEnding = "auto",
+--         includeCompletionsForModuleExports = true,
+--         includeCompletionsWithInsertText = true,
+--         quotePreference = "auto",
+--         allowTextChangesInNewFiles = true,
+--         providePrefixAndSuffixTextForRename = true,
+--         allowRenameOfImportPath = true,
+--         includeInlayHints = {
+--           enumMemberValues = true,
+--           functionLikeReturnTypes = true,
+--           parameterNames = "all", -- 'none', 'literals', or 'all'
+--           parameterTypes = true,
+--           propertyDeclarationTypes = true,
+--           variableTypes = true,
+--         },
+--       },
+--       inlayHints = {
+--         includeInlayParameterNameHints = "all",
+--         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+--         includeInlayFunctionParameterTypeHints = true,
+--         includeInlayVariableTypeHints = true,
+--         includeInlayPropertyDeclarationTypeHints = true,
+--         includeInlayFunctionLikeReturnTypeHints = true,
+--         includeInlayEnumMemberValueHints = true,
+--       },
+--       check = {
+--         npmIsInstalled = true,
+--       },
+--       experimental = {
+--         updateImportsOnPaste = "prompt",
+--         enableProjectDiagnostics = false,
+--         useVsCodeWatcher = false,
+--       },
+--     },
+--     javascript = {
+--       format = {
+--         enable = true,
+--         insertSpaceAfterCommaDelimiter = true,
+--         insertSpaceAfterConstructor = false,
+--         insertSpaceAfterFunctionKeywordForAnonymousFunctions = true,
+--         insertSpaceAfterKeywordsInControlFlowStatements = true,
+--         insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = true,
+--         insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces = false,
+--         insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces = true,
+--         insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets = true,
+--         insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces = false,
+--         insertSpaceAfterSemicolonInForStatements = true,
+--         insertSpaceBeforeAndAfterBinaryOperators = true,
+--         insertSpaceBeforeFunctionParenthesis = false,
+--       },
+--       implicitProjectConfig = {
+--         checkJs = false,
+--         experimentalDecorators = false,
+--         module = "commonjs",
+--         strictFunctionTypes = false,
+--         strictNullChecks = true,
+--         strictPropertyInitialization = false,
+--         useDefineForClassFields = false,
+--       },
+--       preferences = {
+--         autoImportFileExcludePatterns = {},
+--         autoImportSpecifierExcludeRegexes = {},
+--         importModuleSpecifier = "relative",
+--         importModuleSpecifierEnding = "auto",
+--         includeCompletionsForModuleExports = true,
+--         includeCompletionsWithInsertText = true,
+--         quotePreference = "auto",
+--         allowTextChangesInNewFiles = true,
+--         providePrefixAndSuffixTextForRename = true,
+--         allowRenameOfImportPath = true,
+--         includeInlayHints = {
+--           enumMemberValues = true,
+--           functionLikeReturnTypes = true,
+--           parameterNames = "all", -- 'none', 'literals', or 'all'
+--           parameterTypes = true,
+--           propertyDeclarationTypes = true,
+--           variableTypes = true,
+--         },
+--       },
+--       inlayHints = {
+--         includeInlayParameterNameHints = "all",
+--         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+--         includeInlayFunctionParameterTypeHints = true,
+--         includeInlayVariableTypeHints = true,
+--         includeInlayPropertyDeclarationTypeHints = true,
+--         includeInlayFunctionLikeReturnTypeHints = true,
+--         includeInlayEnumMemberValueHints = true,
+--       },
+--       check = {
+--         npmIsInstalled = true,
+--       },
+--       experimental = {
+--         updateImportsOnPaste = "prompt",
+--         enableProjectDiagnostics = false,
+--         useVsCodeWatcher = false,
+--       },
+--     },
+--     typescriptreact = {
+--       format = {
+--         enable = true,
+--         insertSpaceAfterCommaDelimiter = true,
+--         insertSpaceAfterConstructor = false,
+--         insertSpaceAfterFunctionKeywordForAnonymousFunctions = true,
+--         insertSpaceAfterKeywordsInControlFlowStatements = true,
+--         insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = true,
+--         insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces = false,
+--         insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces = true,
+--         insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets = true,
+--         insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces = false,
+--         insertSpaceAfterSemicolonInForStatements = true,
+--         insertSpaceBeforeAndAfterBinaryOperators = true,
+--         insertSpaceBeforeFunctionParenthesis = false,
+--       },
+--       implicitProjectConfig = {
+--         checkJs = false,
+--         experimentalDecorators = false,
+--         module = "commonjs",
+--         strictFunctionTypes = false,
+--         strictNullChecks = true,
+--         strictPropertyInitialization = false,
+--         useDefineForClassFields = false,
+--       },
+--       preferences = {
+--         autoImportFileExcludePatterns = {},
+--         autoImportSpecifierExcludeRegexes = {},
+--         importModuleSpecifier = "relative",
+--         importModuleSpecifierEnding = "auto",
+--         includeCompletionsForModuleExports = true,
+--         includeCompletionsWithInsertText = true,
+--         quotePreference = "auto",
+--         allowTextChangesInNewFiles = true,
+--         providePrefixAndSuffixTextForRename = true,
+--         allowRenameOfImportPath = true,
+--         includeInlayHints = {
+--           enumMemberValues = true,
+--           functionLikeReturnTypes = true,
+--           parameterNames = "all", -- 'none', 'literals', or 'all'
+--           parameterTypes = true,
+--           propertyDeclarationTypes = true,
+--           variableTypes = true,
+--         },
+--       },
+--       inlayHints = {
+--         includeInlayParameterNameHints = "all",
+--         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+--         includeInlayFunctionParameterTypeHints = true,
+--         includeInlayVariableTypeHints = true,
+--         includeInlayPropertyDeclarationTypeHints = true,
+--         includeInlayFunctionLikeReturnTypeHints = true,
+--         includeInlayEnumMemberValueHints = true,
+--       },
+--       check = {
+--         npmIsInstalled = true,
+--       },
+--       experimental = {
+--         updateImportsOnPaste = "prompt",
+--         enableProjectDiagnostics = false,
+--         useVsCodeWatcher = false,
+--       },
+--     },
+--     javascriptreact = {
+--       format = {
+--         enable = true,
+--         insertSpaceAfterCommaDelimiter = true,
+--         insertSpaceAfterConstructor = false,
+--         insertSpaceAfterFunctionKeywordForAnonymousFunctions = true,
+--         insertSpaceAfterKeywordsInControlFlowStatements = true,
+--         insertSpaceAfterOpeningAndBeforeClosingEmptyBraces = true,
+--         insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces = false,
+--         insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces = true,
+--         insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets = true,
+--         insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces = false,
+--         insertSpaceAfterSemicolonInForStatements = true,
+--         insertSpaceBeforeAndAfterBinaryOperators = true,
+--         insertSpaceBeforeFunctionParenthesis = false,
+--       },
+--       implicitProjectConfig = {
+--         checkJs = false,
+--         experimentalDecorators = false,
+--         module = "commonjs",
+--         strictFunctionTypes = false,
+--         strictNullChecks = true,
+--         strictPropertyInitialization = false,
+--         useDefineForClassFields = false,
+--       },
+--       preferences = {
+--         autoImportFileExcludePatterns = {},
+--         autoImportSpecifierExcludeRegexes = {},
+--         importModuleSpecifier = "relative",
+--         importModuleSpecifierEnding = "auto",
+--         includeCompletionsForModuleExports = true,
+--         includeCompletionsWithInsertText = true,
+--         quotePreference = "auto",
+--         allowTextChangesInNewFiles = true,
+--         providePrefixAndSuffixTextForRename = true,
+--         allowRenameOfImportPath = true,
+--         includeInlayHints = {
+--           enumMemberValues = true,
+--           functionLikeReturnTypes = true,
+--           parameterNames = "all", -- 'none', 'literals', or 'all'
+--           parameterTypes = true,
+--           propertyDeclarationTypes = true,
+--           variableTypes = true,
+--         },
+--       },
+--       inlayHints = {
+--         includeInlayParameterNameHints = "all",
+--         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+--         includeInlayFunctionParameterTypeHints = true,
+--         includeInlayVariableTypeHints = true,
+--         includeInlayPropertyDeclarationTypeHints = true,
+--         includeInlayFunctionLikeReturnTypeHints = true,
+--         includeInlayEnumMemberValueHints = true,
+--       },
+--       check = {
+--         npmIsInstalled = true,
+--       },
+--       experimental = {
+--         updateImportsOnPaste = "prompt",
+--         enableProjectDiagnostics = false,
+--         useVsCodeWatcher = false,
+--       },
+--     },
+--   },
+-- }
 
--- set inlay_hint
-require('lspconfig').tsserver.setup {
-    settings = {
-        typescript = {
-            inlayHints = {
-                includeInlayParameterNameHints = 'all',
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-            },
-        },
-        javascript = {
-            inlayHints = {
-                includeInlayParameterNameHints = 'all',
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-            },
-        },
-        typescriptreact = {
-            inlayHints = {
-                includeInlayParameterNameHints = 'all',
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-            },
-        },
-    },
+require("conform").setup {
+  formatters_by_ft = {
+    html = { "prettierd" }, -- simplified to remove unnecessary nesting
+  },
+  autoformat = true,
+  format_on_save = {
+    -- New syntax following the deprecation warning guidance
+    stop_after_first = true, -- Replace the true with the new format option
+    lsp_fallback = true,
+  },
 }
+
+-- Unmap the existing keybinding for <leader>h if necessary
+vim.api.nvim_del_keymap("n", "<leader>h")
+
+-- Map <leader>h to clear search highlighting
+vim.api.nvim_set_keymap("n", "<leader>h", ":nohlsearch<CR>", { noremap = true, silent = true })
