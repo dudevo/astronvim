@@ -272,3 +272,6 @@ vim.api.nvim_del_keymap("n", "<leader>h")
 
 -- Map <leader>h to clear search highlighting
 vim.api.nvim_set_keymap("n", "<leader>h", ":nohlsearch<CR>", { noremap = true, silent = true })
+vim.opt.scrolloff = 5 -- Keeps 5 lines visible above/below the cursor
+vim.opt.sidescrolloff = 5 -- Keeps 5 columns visible left/right of the cursor
+vim.g.neovide_input_macos_option_key_is_meta = "only_left"

@@ -230,17 +230,14 @@
     "prefix": "a-component",
     "description": "Angular component",
     "body": [
-      "import { Component, OnInit } from '@angular/core';",
+      "import { Component } from '@angular/core';",
       "",
       "@Component({",
       "\tselector: '${1:selector-name}',",
       "\ttemplateUrl: '${2:name}.component.html'",
       "})",
       "",
-      "export class ${3:Name}Component implements OnInit {",
-      "\tconstructor() { }",
-      "",
-      "\tngOnInit() { }$0",
+      "export class ${3:Name}Component  {",
       "}"
     ]
   },

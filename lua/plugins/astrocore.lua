@@ -34,6 +34,8 @@ return {
     diagnostics = {
       virtual_text = true,
       underline = true,
+      -- signs = true,
+      -- update_in_insert = false,
     },
     -- vim options can be configured here
     options = {

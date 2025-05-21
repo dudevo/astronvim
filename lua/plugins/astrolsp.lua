@@ -19,6 +19,7 @@ return {
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           "html",
+          "scss",
           -- "python",
         },
       },

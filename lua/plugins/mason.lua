@@ -11,6 +11,11 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
+        "tsserver", -- TypeScript/JavaScript LSP
+        "angularls", -- Angular
+        "cssls", -- SCSS and CSS
+        "html",
+        "eslint", -- ESLint LSP
         -- add more arguments for adding more language servers
       },
     },
